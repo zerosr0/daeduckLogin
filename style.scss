@@ -1,0 +1,306 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Gowun Dodum", sans-serif;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+.container {
+	position: relative;
+	width: 1400px;
+	min-height: 100vh;
+	margin: 0 auto;
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	h1 {
+		position: relative;
+		float: left;
+		width: 100%;
+		height: 50px;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		a img {
+			width: 121px;
+		}
+	}
+	#frame {
+		float: left;
+		width: 53%;
+		min-height: calc(100% - 80px);
+		.panel {
+			position: absolute;
+			top: 80px;
+			left: 0;
+			width: inherit;
+			height: calc(100% - 80px);
+			overflow: hidden;
+			li {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				&.on img {
+					opacity: 1;
+					transform: scale(1.01);
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: fill;
+					opacity: 0;
+					transform: scale(1);
+					transition: opacity 0.5s, transform 4s;
+				}
+			}
+		}
+		.slideBtns {
+			position: absolute;
+			height: 20px;
+			left: 23%;
+			bottom: 8vh;
+			display: flex;
+			gap: 10px;
+			li {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: #000;
+				opacity: 0.3;
+				cursor: pointer;
+				transition: 0.5s;
+				&.on {
+					background: #fff;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.logSection {
+		position: relative;
+		float: right;
+		width: 47%;
+		height: inherit;
+		background-color: #396fb8;
+		text-align: center;
+		color: #fff;
+		.loginHeader {
+			h2 {
+				font-size: 36px;
+				margin-top: 40px;
+				margin-bottom: 5px;
+			}
+			img {
+				opacity: 0.15;
+				width: 60%;
+				height: 60%;
+				margin-bottom: 20px;
+			}
+			.slogan {
+				position: absolute;
+				top: 28%;
+				left: 50%;
+				transform: translateX(-50%);
+				p {
+					margin-bottom: 30px;
+					font-size: 25px;
+					font-weight: bolder;
+				}
+				p.point {
+					font-size: 35px;
+				}
+			}
+		}
+		.loginContainer {
+			position: relative;
+			width: 55%;
+			margin: 0 auto 50px;
+			&::after {
+				display: block;
+				content: "";
+				clear: both;
+			}
+			.loginSection {
+				display: flex;
+				justify-content: space-between;
+				.loginInput {
+					width: 70%;
+					input {
+						width: 100%;
+						height: 30px;
+						padding-left: 10px;
+						margin-bottom: 5px;
+					}
+				}
+			}
+			.loginBtn {
+				width: 24%;
+				height: 75px;
+				background-color: #0d2645;
+				color: #fff;
+				border-radius: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.search {
+				width: 100%;
+				float: left;
+				span {
+					a {
+						color: #fff;
+						font-size: 14px;
+					}
+				}
+				span.searchId::after {
+					content: "|";
+					display: inline-block;
+					padding-left: 15px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+	.footer {
+		width: 100%;
+		height: 60px;
+		margin-bottom: 46px;
+		p {
+			font-size: 13px;
+		}
+	}
+}
+
+@media screen and (max-width: 1420px) {
+	.container {
+		width: 100%;
+		h1 {
+			width: calc(100% - 20px);
+			padding-left: 20px;
+		}
+		#frame {
+			width: 60%;
+			.slideBtns {
+				height: 10px;
+				left: 28%;
+				li {
+					width: 10px;
+					height: 10px;
+				}
+			}
+		}
+		.logSection {
+			width: 40%;
+			.loginHeader {
+				h2 {
+					font-size: 30px;
+				}
+				.slogan {
+					p {
+						margin-bottom: 20px;
+						font-size: 20px;
+					}
+					p.point {
+						font-size: 25px;
+					}
+				}
+			}
+			.loginContainer {
+				width: 65%;
+			}
+		}
+		.footer {
+			margin-bottom: 60px;
+		}
+	}
+}
+
+@media screen and (max-width: 940px) {
+	.container {
+		width: 60%;
+		#frame {
+			width: 100%;
+			height: 50vh;
+			min-height: 50vh;
+			.panel {
+				height: inherit;
+				li {
+					overflow: hidden;
+					img {
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		.logSection {
+			width: 100%;
+			.loginHeader {
+				h2 {
+					font-size: 20px;
+					margin-bottom: 30px;
+				}
+				img {
+					display: none;
+				}
+				.slogan {
+					display: none;
+				}
+			}
+		}
+		.footer {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		width: 100%;
+		h1 {
+			padding-top: 5px;
+			padding-bottom: 0px;
+		}
+		#frame {
+			height: 50vh;
+			min-height: 50vh;
+			.panel {
+				top: 50px;
+				li {
+					img {
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		.logSection {
+			width: 100%;
+			height: 50%;
+			.loginHeader {
+				h2 {
+					font-size: 20px;
+					margin-bottom: 10px;
+				}
+				img {
+					display: none;
+				}
+				.slogan {
+					display: none;
+				}
+			}
+		}
+		.footer {
+			margin-bottom: 10px;
+		}
+	}
+}
