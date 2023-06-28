@@ -21,14 +21,8 @@ li {
   min-height: 100vh;
   margin: 0 auto;
 }
-.container::after {
-  content: "";
-  display: block;
-  clear: both;
-}
 .container h1 {
   position: relative;
-  float: left;
   width: 100%;
   height: 50px;
   padding-top: 20px;
@@ -38,16 +32,16 @@ li {
   width: 121px;
 }
 .container #frame {
-  float: left;
-  width: 53%;
-  min-height: calc(100% - 80px);
+  position: relative;
+  width: 741px;
+  height: 733px;
 }
 .container #frame .panel {
   position: absolute;
-  top: 80px;
+  top: 0;
   left: 0;
-  width: inherit;
-  height: calc(100% - 80px);
+  width: 741px;
+  height: 733px;
   overflow: hidden;
 }
 .container #frame .panel li {
@@ -69,15 +63,16 @@ li {
 }
 .container #frame .slideBtns {
   position: absolute;
-  height: 20px;
-  left: 23%;
-  bottom: 8vh;
   display: flex;
   gap: 10px;
+  height: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3vh;
 }
 .container #frame .slideBtns li {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #000;
   opacity: 0.3;
@@ -89,10 +84,11 @@ li {
   opacity: 1;
 }
 .container .logSection {
-  position: relative;
-  float: right;
-  width: 47%;
-  height: inherit;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 659px;
+  height: 733px;
   background-color: #396fb8;
   text-align: center;
   color: #fff;
@@ -104,8 +100,8 @@ li {
 }
 .container .logSection .loginHeader img {
   opacity: 0.15;
-  width: 60%;
-  height: 60%;
+  width: 55%;
+  height: 55%;
   margin-bottom: 20px;
 }
 .container .logSection .loginHeader .slogan {
@@ -115,7 +111,7 @@ li {
   transform: translateX(-50%);
 }
 .container .logSection .loginHeader .slogan p {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-size: 25px;
   font-weight: bolder;
 }
@@ -144,6 +140,7 @@ li {
   height: 30px;
   padding-left: 10px;
   margin-bottom: 5px;
+  border-radius: 5px;
 }
 .container .logSection .loginContainer .loginBtn {
   width: 24%;
@@ -169,11 +166,6 @@ li {
   padding-left: 15px;
   padding-right: 10px;
 }
-.container .footer {
-  width: 100%;
-  height: 60px;
-  margin-bottom: 46px;
-}
 .container .footer p {
   font-size: 13px;
 }
@@ -187,18 +179,20 @@ li {
     padding-left: 20px;
   }
   .container #frame {
-    width: 60%;
+    width: 53%;
+  }
+  .container #frame .panel li img {
+    object-fit: cover;
   }
   .container #frame .slideBtns {
     height: 10px;
-    left: 28%;
   }
   .container #frame .slideBtns li {
     width: 10px;
     height: 10px;
   }
   .container .logSection {
-    width: 40%;
+    width: 47%;
   }
   .container .logSection .loginHeader h2 {
     font-size: 30px;
@@ -213,79 +207,128 @@ li {
   .container .logSection .loginContainer {
     width: 65%;
   }
-  .container .footer {
-    margin-bottom: 60px;
+}
+@media screen and (max-width: 1240px) {
+  .container #frame {
+    width: 674px;
+    height: 667px;
+  }
+  .container #frame .panel {
+    width: 674px;
+    height: 667px;
+  }
+  .container .logSection {
+    width: 46%;
+    height: 667px;
   }
 }
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1100px) {
+  .container #frame {
+    width: 593px;
+    height: 587px;
+  }
+  .container #frame .panel {
+    width: 593px;
+    height: 587px;
+  }
+  .container .logSection {
+    height: 587px;
+  }
+  .container .logSection .loginContainer {
+    margin: 0 auto 30px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .container #frame {
+    width: 475px;
+    height: 470px;
+  }
+  .container #frame .panel {
+    width: 475px;
+    height: 470px;
+  }
+  .container .logSection {
+    width: 51%;
+    height: 470px;
+  }
+  .container .logSection .loginHeader img {
+    display: none;
+  }
+  .container .logSection .loginHeader .slogan {
+    top: 21%;
+  }
+  .container .logSection .loginContainer .loginSection {
+    margin-top: 185px;
+  }
+}
+@media screen and (max-width: 870px) {
   .container {
-    width: 60%;
+    width: 65%;
   }
   .container #frame {
     width: 100%;
-    height: 50vh;
-    min-height: 50vh;
   }
   .container #frame .panel {
-    height: inherit;
-  }
-  .container #frame .panel li {
-    overflow: hidden;
-  }
-  .container #frame .panel li img {
-    object-fit: cover;
+    width: 100%;
   }
   .container .logSection {
     width: 100%;
+    height: 300px;
+    top: 550px;
   }
   .container .logSection .loginHeader h2 {
     font-size: 20px;
     margin-bottom: 30px;
   }
-  .container .logSection .loginHeader img {
-    display: none;
-  }
   .container .logSection .loginHeader .slogan {
     display: none;
   }
+  .container .logSection .loginContainer .loginSection {
+    margin-top: 20px;
+  }
   .container .footer {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   .container {
     width: 100%;
+    height: 100%;
   }
   .container h1 {
     padding-top: 5px;
     padding-bottom: 0px;
   }
-  .container #frame {
-    height: 50vh;
-    min-height: 50vh;
-  }
-  .container #frame .panel {
-    top: 50px;
-  }
   .container #frame .panel li img {
-    object-fit: cover;
+    object-position: 0px 0px;
   }
   .container .logSection {
     width: 100%;
-    height: 50%;
+    height: 40%;
+    top: 525px;
   }
   .container .logSection .loginHeader h2 {
     font-size: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
   }
-  .container .logSection .loginHeader img {
-    display: none;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
   }
-  .container .logSection .loginHeader .slogan {
-    display: none;
+  .container #frame {
+    width: inherit;
+    height: 50vh;
   }
-  .container .footer {
-    margin-bottom: 10px;
+  .container #frame .panel {
+    width: 100%;
+    height: 100%;
+  }
+  .container .logSection {
+    top: 390px;
+    height: 43%;
   }
 }
 
