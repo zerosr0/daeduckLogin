@@ -152,6 +152,10 @@ li {
   justify-content: center;
   align-items: center;
 }
+.container .logSection .loginContainer .loginBtn:hover {
+  color: #ff7200;
+  font-weight: bolder;
+}
 .container .logSection .loginContainer .search {
   width: 100%;
   float: left;
@@ -159,6 +163,9 @@ li {
 .container .logSection .loginContainer .search span a {
   color: #fff;
   font-size: 14px;
+}
+.container .logSection .loginContainer .search span a:hover {
+  color: #ff7200;
 }
 .container .logSection .loginContainer .search span.searchId::after {
   content: "|";
@@ -183,6 +190,7 @@ li {
   }
   .container #frame .panel li img {
     object-fit: cover;
+    object-position: 0px 0px;
   }
   .container #frame .slideBtns {
     height: 10px;
@@ -218,11 +226,14 @@ li {
     height: 667px;
   }
   .container .logSection {
-    width: 46%;
+    width: calc(100% - 674px);
     height: 667px;
   }
+  .container .logSection .loginHeader .slogan {
+    top: 23%;
+  }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1050px) {
   .container #frame {
     width: 593px;
     height: 587px;
@@ -232,13 +243,14 @@ li {
     height: 587px;
   }
   .container .logSection {
+    width: 43%;
     height: 587px;
   }
   .container .logSection .loginContainer {
     margin: 0 auto 30px;
   }
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 910px) {
   .container #frame {
     width: 475px;
     height: 470px;
@@ -248,87 +260,68 @@ li {
     height: 470px;
   }
   .container .logSection {
-    width: 51%;
+    width: calc(100% - 475px);
     height: 470px;
   }
   .container .logSection .loginHeader img {
     display: none;
   }
   .container .logSection .loginHeader .slogan {
-    top: 21%;
-  }
-  .container .logSection .loginContainer .loginSection {
-    margin-top: 185px;
-  }
-}
-@media screen and (max-width: 870px) {
-  .container {
-    width: 65%;
-  }
-  .container #frame {
-    width: 100%;
-  }
-  .container #frame .panel {
-    width: 100%;
-  }
-  .container .logSection {
-    width: 100%;
-    height: 300px;
-    top: 550px;
-  }
-  .container .logSection .loginHeader h2 {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  .container .logSection .loginHeader .slogan {
     display: none;
   }
-  .container .logSection .loginContainer .loginSection {
-    margin-top: 20px;
+  .container .logSection .loginContainer {
+    margin: 0 auto 80px;
   }
-  .container .footer {
-    margin-bottom: 0px;
+  .container .logSection .loginContainer .loginSection {
+    margin-top: 80px;
+  }
+  .container .footer p {
+    font-size: 11px;
   }
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 885px) {
   .container {
     width: 100%;
-    height: 100%;
   }
   .container h1 {
     padding-top: 5px;
     padding-bottom: 0px;
   }
-  .container #frame .panel li img {
-    object-position: 0px 0px;
-  }
-  .container .logSection {
-    width: 100%;
-    height: 40%;
-    top: 525px;
-  }
-  .container .logSection .loginHeader h2 {
-    font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .container {
-    width: 100vw;
-    height: 100vh;
-  }
   .container #frame {
-    width: inherit;
-    height: 50vh;
+    width: 100%;
+    height: 650px;
   }
   .container #frame .panel {
     width: 100%;
     height: 100%;
   }
   .container .logSection {
-    top: 390px;
-    height: 43%;
+    width: 100vw;
+    height: 45%;
+    top: 705px;
+    right: 0;
+  }
+  .container .logSection .loginHeader h2 {
+    font-size: 20px;
+  }
+  .container .logSection .loginContainer {
+    margin: 0 auto 20px;
+    width: 80%;
+  }
+  .container .logSection .loginContainer .loginSection {
+    margin-top: 20px;
+  }
+  .container .footer {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container #frame {
+    height: 380px;
+  }
+  .container .logSection {
+    top: 430px;
+    height: 50%;
   }
 }
 
