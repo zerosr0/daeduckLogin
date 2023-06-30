@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -90,32 +90,34 @@ li {
   width: 659px;
   height: 733px;
   background-color: #396fb8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   color: #fff;
+}
+.container .logSection .loginHeader {
+  height: 70%;
 }
 .container .logSection .loginHeader h2 {
   font-size: 36px;
   margin-top: 40px;
-  margin-bottom: 50px;
+  letter-spacing: 3px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: normal;
 }
-.container .logSection .loginHeader img {
-  opacity: 0.8;
-  width: 80%;
-  margin-bottom: 30px;
+.container .logSection .loginHeader .plmImage {
+  position: relative;
+  opacity: 0.85;
+  transform: scale(60%);
 }
-.container .logSection .loginHeader .slogan {
+.container .logSection .loginHeader .plmImage .plmCircle {
+  animation: move 40s linear infinite;
+}
+.container .logSection .loginHeader .plmImage .plmText {
   position: absolute;
-  top: 28%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.container .logSection .loginHeader .slogan p {
-  margin-bottom: 25px;
-  font-size: 25px;
-  font-weight: bolder;
-}
-.container .logSection .loginHeader .slogan p.point {
-  font-size: 35px;
+  top: 35%;
+  left: 15%;
 }
 .container .logSection .loginContainer {
   position: relative;
@@ -172,10 +174,21 @@ li {
   padding-left: 15px;
   padding-right: 10px;
 }
+.container .footer {
+  margin-bottom: 10px;
+}
 .container .footer p {
   font-size: 13px;
 }
 
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media screen and (max-width: 1420px) {
   .container {
     width: 100%;
@@ -199,17 +212,10 @@ li {
     height: 10px;
   }
   .container .logSection {
-    width: 47%;
+    width: 47.5%;
   }
   .container .logSection .loginHeader h2 {
     font-size: 30px;
-  }
-  .container .logSection .loginHeader .slogan p {
-    margin-bottom: 20px;
-    font-size: 20px;
-  }
-  .container .logSection .loginHeader .slogan p.point {
-    font-size: 25px;
   }
   .container .logSection .loginContainer {
     width: 65%;
@@ -228,9 +234,6 @@ li {
     width: calc(100% - 674px);
     height: 667px;
   }
-  .container .logSection .loginHeader .slogan {
-    top: 23%;
-  }
 }
 @media screen and (max-width: 1050px) {
   .container #frame {
@@ -242,8 +245,14 @@ li {
     height: 587px;
   }
   .container .logSection {
-    width: 43%;
+    width: 43.5%;
     height: 587px;
+  }
+  .container .logSection .loginHeader .plmImage {
+    height: 180px;
+  }
+  .container .logSection .loginHeader .plmImage .plmText {
+    top: 80%;
   }
   .container .logSection .loginContainer {
     margin: 0 auto 30px;
@@ -262,10 +271,10 @@ li {
     width: calc(100% - 475px);
     height: 470px;
   }
-  .container .logSection .loginHeader img {
-    display: none;
+  .container .logSection .loginHeader {
+    height: 100px;
   }
-  .container .logSection .loginHeader .slogan {
+  .container .logSection .loginHeader .plmImage {
     display: none;
   }
   .container .logSection .loginContainer {
@@ -296,12 +305,9 @@ li {
   }
   .container .logSection {
     width: 100vw;
-    height: 45%;
+    height: 40%;
     top: 705px;
     right: 0;
-  }
-  .container .logSection .loginHeader h2 {
-    font-size: 20px;
   }
   .container .logSection .loginContainer {
     margin: 0 auto 20px;

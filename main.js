@@ -1,11 +1,12 @@
 const frame = document.querySelector("#frame");
 const panel = frame.querySelectorAll(".panel li");
-const slideBtns = frame.querySelectorAll('.slideBtns li')
+const slideBtns = frame.querySelectorAll('.slideBtns li');
 
 const len = panel.length - 1;
 const interval = 4000;
 let panelNum = 0;
 let timer = null;
+
 
 window.onload = () => {
   starRolling();
