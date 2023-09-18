@@ -1,6 +1,5 @@
 const frame = document.querySelector("#frame");
 const panel = frame.querySelectorAll(".panel li");
-const slideBtns = frame.querySelectorAll('.slideBtns li');
 
 const len = panel.length - 1;
 const interval = 4000;
@@ -20,9 +19,7 @@ slideBtns.forEach((btn, idx) => {
 
 function activation(index) {
   for (const el of panel) el.classList.remove('on');
-  for (const el of slideBtns) el.classList.remove('on');
   panel[index].classList.add('on');
-  slideBtns[index].classList.add('on');
   panelNum = index;
 }
 

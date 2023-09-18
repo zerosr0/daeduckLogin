@@ -1,8 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@font-face {
+  font-family: "neo";
+  src: url("../font/AppleSDGothicNeoM.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "neo";
+  box-sizing: border-box;
 }
 
 a {
@@ -15,32 +20,36 @@ li {
   list-style: none;
 }
 
+header {
+  position: relative;
+}
+header h1 {
+  width: 100%;
+  height: 90px;
+  padding: 20px 0 20px 20px;
+}
+header h1 a {
+  display: inline-block;
+}
+header h1 a img {
+  width: 163px;
+}
+
 .container {
   position: relative;
-  width: 1400px;
-  min-height: 100vh;
-  margin: 0 auto;
-}
-.container h1 {
-  position: relative;
   width: 100%;
-  height: 50px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-.container h1 a img {
-  width: 121px;
+  min-height: 80vh;
+  margin: 0 auto;
 }
 .container #frame {
   position: relative;
-  width: 741px;
   height: 733px;
 }
 .container #frame .panel {
   position: absolute;
   top: 0;
   left: 0;
-  width: 741px;
+  width: 68%;
   height: 733px;
   overflow: hidden;
 }
@@ -56,38 +65,15 @@ li {
 .container #frame .panel li img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
   opacity: 0;
   transform: scale(1);
   transition: opacity 0.5s, transform 4s;
 }
-.container #frame .slideBtns {
-  position: absolute;
-  display: flex;
-  gap: 10px;
-  height: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 3vh;
-}
-.container #frame .slideBtns li {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #000;
-  opacity: 0.3;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.container #frame .slideBtns li.on {
-  background: #fff;
-  opacity: 1;
-}
 .container .logSection {
   position: absolute;
-  top: 80px;
+  top: 0;
   right: 0;
-  width: 659px;
+  width: 32%;
   height: 733px;
   background-color: #396fb8;
   display: flex;
@@ -95,29 +81,25 @@ li {
   flex-direction: column;
   text-align: center;
   color: #fff;
+  overflow: hidden;
 }
 .container .logSection .loginHeader {
-  height: 70%;
+  height: 65%;
 }
-.container .logSection .loginHeader h2 {
-  font-size: 36px;
-  margin-top: 40px;
-  letter-spacing: 3px;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: normal;
-}
-.container .logSection .loginHeader .plmImage {
-  position: relative;
+.container .logSection .loginHeader .pmsImage {
+  position: absolute;
+  top: 0;
+  left: 50px;
   opacity: 0.85;
-  transform: scale(60%);
+  transform: scale(70%);
 }
-.container .logSection .loginHeader .plmImage .plmCircle {
+.container .logSection .loginHeader .pmsImage .pmsCircle {
   animation: move 40s linear infinite;
 }
-.container .logSection .loginHeader .plmImage .plmText {
+.container .logSection .loginHeader .pmsImage .pmsText {
   position: absolute;
-  top: 35%;
-  left: 15%;
+  top: 47%;
+  left: 38%;
 }
 .container .logSection .loginContainer {
   position: relative;
@@ -174,11 +156,15 @@ li {
   padding-left: 15px;
   padding-right: 10px;
 }
-.container .footer {
+
+footer {
+  margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
-.container .footer p {
-  font-size: 13px;
+footer p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 @keyframes move {
@@ -189,144 +175,9 @@ li {
     transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 1420px) {
-  .container {
-    width: 100%;
-  }
-  .container h1 {
-    width: calc(100% - 20px);
-    padding-left: 20px;
-  }
-  .container #frame {
-    width: 53%;
-  }
-  .container #frame .panel li img {
-    object-fit: cover;
-    object-position: 0px 0px;
-  }
-  .container #frame .slideBtns {
-    height: 10px;
-  }
-  .container #frame .slideBtns li {
-    width: 10px;
-    height: 10px;
-  }
-  .container .logSection {
-    width: 47.5%;
-  }
-  .container .logSection .loginHeader h2 {
-    font-size: 30px;
-  }
-  .container .logSection .loginContainer {
-    width: 65%;
-  }
-}
-@media screen and (max-width: 1240px) {
-  .container #frame {
-    width: 674px;
-    height: 667px;
-  }
-  .container #frame .panel {
-    width: 674px;
-    height: 667px;
-  }
-  .container .logSection {
-    width: calc(100% - 674px);
-    height: 667px;
-  }
-}
-@media screen and (max-width: 1050px) {
-  .container #frame {
-    width: 593px;
-    height: 587px;
-  }
-  .container #frame .panel {
-    width: 593px;
-    height: 587px;
-  }
-  .container .logSection {
-    width: 43.5%;
-    height: 587px;
-  }
-  .container .logSection .loginHeader .plmImage {
-    height: 180px;
-  }
-  .container .logSection .loginHeader .plmImage .plmText {
-    top: 80%;
-  }
-  .container .logSection .loginContainer {
-    margin: 0 auto 30px;
-  }
-}
-@media screen and (max-width: 910px) {
-  .container #frame {
-    width: 475px;
-    height: 470px;
-  }
-  .container #frame .panel {
-    width: 475px;
-    height: 470px;
-  }
-  .container .logSection {
-    width: calc(100% - 475px);
-    height: 470px;
-  }
-  .container .logSection .loginHeader {
-    height: 100px;
-  }
-  .container .logSection .loginHeader .plmImage {
-    display: none;
-  }
-  .container .logSection .loginContainer {
-    margin: 0 auto 80px;
-  }
-  .container .logSection .loginContainer .loginSection {
-    margin-top: 80px;
-  }
-  .container .footer p {
-    font-size: 11px;
-  }
-}
-@media screen and (max-width: 885px) {
-  .container {
-    width: 100%;
-  }
-  .container h1 {
-    padding-top: 5px;
-    padding-bottom: 0px;
-  }
-  .container #frame {
-    width: 100%;
-    height: 650px;
-  }
-  .container #frame .panel {
-    width: 100%;
-    height: 100%;
-  }
-  .container .logSection {
-    width: 100vw;
-    height: 40%;
-    top: 705px;
-    right: 0;
-  }
-  .container .logSection .loginContainer {
-    margin: 0 auto 20px;
-    width: 80%;
-  }
-  .container .logSection .loginContainer .loginSection {
-    margin-top: 20px;
-  }
-  .container .footer {
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .container #frame {
-    height: 380px;
-  }
-  .container .logSection {
-    top: 430px;
-    height: 50%;
+@media screen and (max-width: 1700px) {
+  .container .logSection .loginHeader .pmsImage {
+    transform: scale(50%);
   }
 }
 
