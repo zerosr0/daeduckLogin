@@ -1,10 +1,11 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 @font-face {
 	font-family: "neo";
 	src: url("../font/AppleSDGothicNeoM.ttf")
 		format("truetype");
 }
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -37,71 +38,48 @@ header {
 .container {
 	position: relative;
 	width: 100%;
+	height: calc(100vh - 90px - 56px);
 	min-height: 80vh;
 	margin: 0 auto;
-	#frame {
-		position: relative;
-		height: 733px;
-		.panel {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 68%;
-			height: 733px;
-			overflow: hidden;
-			li {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				&.on img {
-					opacity: 1;
-					transform: scale(1.01);
-				}
-				img {
-					width: 100%;
-					height: 100%;
-					opacity: 0;
-					transform: scale(1);
-					transition: opacity 0.5s, transform 4s;
-				}
-			}
-		}
-	}
 	.logSection {
 		position: absolute;
-		top: 0;
-		right: 0;
-		width: 32%;
-		height: 733px;
-		background-color: #396fb8;
+		top: 10%;
+		left: 3%;
+		width: 25%;
+		height: 80%;
+		border-radius: 50px;
+		background-color: rgb(238, 238, 238, 0.7);
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
 		color: #fff;
 		overflow: hidden;
+		z-index: 5;
 		.loginHeader {
+			position: relative;
+			width: 100%;
 			height: 65%;
 			.pmsImage {
-				position: absolute;
-				top: 0;
-				left: 50px;
-				opacity: 0.85;
-				transform: scale(70%);
+				position: relative;
+				display: flex;
+				justify-content: center;
+				top: -10%;
+				transform: scale(55%);
 				.pmsCircle {
-					animation: move 40s linear infinite;
+					animation: move 50s linear infinite;
 				}
 				.pmsText {
 					position: absolute;
 					top: 47%;
-					left: 38%;
+					transform: scale(2);
 				}
 			}
 		}
 		.loginContainer {
 			position: relative;
 			width: 55%;
-			margin: 0 auto 50px;
+			margin: 30px auto 50px;
 			&::after {
 				display: block;
 				content: "";
@@ -110,20 +88,22 @@ header {
 			.loginSection {
 				display: flex;
 				justify-content: space-between;
+				margin-bottom: 5px;
 				.loginInput {
 					width: 70%;
 					input {
 						width: 100%;
-						height: 30px;
+						height: 35px;
 						padding-left: 10px;
 						margin-bottom: 5px;
 						border-radius: 5px;
+						border: none;
 					}
 				}
 			}
 			.loginBtn {
-				width: 24%;
-				height: 75px;
+				width: 28%;
+				height: 76px;
 				background-color: #0d2645;
 				color: #fff;
 				border-radius: 10px;
@@ -156,6 +136,61 @@ header {
 			}
 		}
 	}
+	#frame {
+		position: relative;
+		height: 100%;
+		.panel {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			li {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				&.on img {
+					opacity: 1;
+					transform: scale(1.01);
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					opacity: 0;
+					transform: scale(1);
+					transition: opacity 0.5s, transform 4s;
+				}
+			}
+		}
+		.panel-mobile {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			li {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				&.on img {
+					opacity: 1;
+					transform: scale(1.01);
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					opacity: 0;
+					transform: scale(1);
+					transition: opacity 0.5s, transform 4s;
+				}
+			}
+		}
+	}
 }
 footer {
 	margin-top: 10px;
@@ -184,6 +219,84 @@ footer {
 					transform: scale(50%);
 				}
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.container {
+		.logSection {
+			width: 35%;
+			.loginHeader {
+				.pmsImage {
+					top: -15%;
+				}
+			}
+			.loginContainer {
+				width: 65%;
+			}
+		}
+	}
+}
+
+//tablet일 때
+@media screen and (max-width: 1200px) {
+	.container {
+		.logSection {
+			width: 40%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		#frame {
+			.panel {
+				display: none;
+			}
+			.panel-mobile {
+				display: block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.container {
+		.logSection {
+			width: 65%;
+			.loginHeader {
+				.pmsImage {
+					top: 0;
+				}
+			}
+			.loginContainer {
+				width: 90%;
+			}
+		}
+	}
+	footer {
+		p {
+			font-size: 12px;
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.container {
+		.logSection {
+			width: 90%;
+			background-color: rgb(238, 238, 238, 0.3);
+			.loginHeader {
+				.pmsImage {
+					top: -30%;
+				}
+			}
+			.loginContainer {
+				width: 95%;
+			}
+		}
+	}
+	footer {
+		p {
+			font-size: 10px;
 		}
 	}
 }
