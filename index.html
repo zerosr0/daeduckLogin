@@ -11,13 +11,49 @@
 
 <body>
   <header>
-    <h1><a href="#"><img src="image/logo.jpg" alt="logo"></a></h1>
+    <h1><svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="178" height="40"
+        viewBox="0 0 151.968 34.294">
+        <defs>
+          <clipPath id="clip-path">
+            <rect id="사각형_8749" data-name="사각형 8749" width="178" height="40" transform="translate(0 0)" fill="none">
+            </rect>
+          </clipPath>
+        </defs>
+        <g id="그룹_1160" data-name="그룹 1160" transform="translate(0 43)">
+          <g id="그룹_1159" data-name="그룹 1159" transform="translate(0 -43)" clip-path="url(#clip-path)">
+            <path id="패스_9531" data-name="패스 9531"
+              d="M33.474,31.033H23.29V25.718c5.027-1.439,8.732-6.584,8.732-12.636,0-.547-.032-1.107-.08-1.632h1.532c4.828,0,8.748,4.4,8.748,9.791s-3.92,9.792-8.748,9.792m-16-19.584h2.907V31.033H17.475Zm11.632,1.632a9.767,9.767,0,0,1-5.817,9.23V11.45h5.7a9.276,9.276,0,0,1,.12,1.632M10.2,22.87V3.264h10.18a8.667,8.667,0,0,1,7.569,4.917H13.109V22.87Zm-2.91,0H4.386V3.264H7.292ZM33.474,8.181h-2.3C29.453,3.407,25.261,0,20.382,0H0V26.132H13.109v8.162H33.474c6.432,0,11.657-5.863,11.657-13.053,0-7.22-5.224-13.06-11.657-13.06"
+              transform="translate(0 0)"></path>
+            <path id="패스_9532" data-name="패스 9532"
+              d="M123.42,31.624h1.691c2.131,0,2.548-1.6,2.548-5.792,0-3.081,0-5.792-2.432-5.792H123.42Zm-3.5-14.154h5.838c4.586,0,5.444,3.058,5.444,8.27,0,2.572.394,8.455-5.583,8.455h-5.7Z"
+              transform="translate(-60.249 -8.777)"></path>
+            <path id="패스_9533" data-name="패스 9533"
+              d="M152.408,20.691h-.046l-1.6,7.228H154.1ZM145.667,34.2,150.3,17.471h4.61L159.451,34.2h-3.684l-.927-3.707h-4.772l-.949,3.707Z"
+              transform="translate(-73.183 -8.777)"></path>
+            <path id="패스_9534" data-name="패스 9534"
+              d="M176.673,34.2V17.471H185.8v2.571h-5.629v4.124h5.189v2.571h-5.189v4.888h5.814V34.2Z"
+              transform="translate(-88.761 -8.777)"></path>
+            <path id="패스_9535" data-name="패스 9535"
+              d="M203.589,31.624h1.691c2.131,0,2.548-1.6,2.548-5.792,0-3.081,0-5.792-2.433-5.792h-1.807Zm-3.5-14.154h5.838c4.587,0,5.444,3.058,5.444,8.27,0,2.572.394,8.455-5.583,8.455h-5.7Z"
+              transform="translate(-100.526 -8.777)"></path>
+            <path id="패스_9536" data-name="패스 9536"
+              d="M239.632,17.47V29.331c0,2.5-1.413,5.143-5.675,5.143-3.846,0-5.7-1.992-5.7-5.143V17.47h3.5V29.1c0,2.062.88,2.873,2.154,2.873,1.529,0,2.224-1.019,2.224-2.873V17.47Z"
+              transform="translate(-114.677 -8.777)"></path>
+            <path id="패스_9537" data-name="패스 9537"
+              d="M256.518,25.553c0-4.425,0-8.641,5.768-8.641,3.567,0,5,1.969,4.865,5.56h-3.428c0-2.224-.395-3.058-1.437-3.058-1.969,0-2.224,1.853-2.224,6.139s.255,6.139,2.224,6.139c1.622,0,1.552-2.085,1.6-3.406h3.451c0,4.471-1.783,5.907-5.05,5.907-5.768,0-5.768-4.262-5.768-8.641"
+              transform="translate(-128.875 -8.497)"></path>
+            <path id="패스_9538" data-name="패스 9538"
+              d="M289.955,17.47H293.8l-4.68,7.505,4.68,9.22h-3.939l-4.008-8.571h-.046V34.2h-3.5V17.47h3.5v7.158h.046Z"
+              transform="translate(-141.833 -8.777)"></path>
+          </g>
+        </g>
+      </svg></h1>
   </header>
-  <div class="container">
+  <div class="login-container">
     <div class="logSection">
       <div class="loginHeader">
         <div class="pmsImage">
-          <img class="pmsCircle" src="image/pms_circle1.png" alt="">
+          <img class="pmsCircle" src="image/pms_circle.png" alt="">
           <img class="pmsText" src="image/pms_text.png" alt="">
         </div>
       </div>
@@ -30,8 +66,8 @@
           <a class="loginBtn" href="#">로그인</a>
         </div>
         <p class="search">
-          <span class="searchId"><a href="#">아이디찾기</a></span>
-          <span><a href="#">비밀번호 재설정</a></span>
+          <label for="saveId"><span class="searchId"><input type="checkbox" name="" id="saveId">아이디저장</span></label>
+          <span><img src="image/비밀번호재설정.svg" alt="비밀번호재설정 아이콘">비밀번호 재설정</span>
         </p>
       </div>
     </div>

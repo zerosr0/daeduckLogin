@@ -25,30 +25,28 @@ header {
 }
 header h1 {
   width: 100%;
-  height: 90px;
+  height: 80px;
   padding: 20px 0 20px 20px;
 }
-header h1 a {
+header h1 svg {
   display: inline-block;
-}
-header h1 a img {
-  width: 163px;
+  fill: #000080;
 }
 
-.container {
+.login-container {
   position: relative;
   width: 100%;
   height: calc(100vh - 90px - 56px);
   min-height: 80vh;
   margin: 0 auto;
 }
-.container .logSection {
+.login-container .logSection {
   position: absolute;
   top: 10%;
-  left: 3%;
+  left: 5%;
   width: 25%;
   height: 80%;
-  border-radius: 50px;
+  border-radius: 40px;
   background-color: rgba(238, 238, 238, 0.7);
   display: flex;
   align-items: center;
@@ -58,45 +56,46 @@ header h1 a img {
   overflow: hidden;
   z-index: 5;
 }
-.container .logSection .loginHeader {
+.login-container .logSection .loginHeader {
   position: relative;
-  width: 100%;
+  width: 289.3px;
   height: 65%;
 }
-.container .logSection .loginHeader .pmsImage {
+.login-container .logSection .loginHeader .pmsImage {
   position: relative;
   display: flex;
   justify-content: center;
-  top: -10%;
-  transform: scale(55%);
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: scale(55%) translate(-50%, -50%);
+  transform-origin: top left;
 }
-.container .logSection .loginHeader .pmsImage .pmsCircle {
+.login-container .logSection .loginHeader .pmsImage .pmsCircle {
   animation: move 50s linear infinite;
 }
-.container .logSection .loginHeader .pmsImage .pmsText {
+.login-container .logSection .loginHeader .pmsImage .pmsText {
   position: absolute;
-  top: 47%;
-  transform: scale(2);
 }
-.container .logSection .loginContainer {
+.login-container .logSection .loginContainer {
   position: relative;
   width: 55%;
   margin: 30px auto 50px;
 }
-.container .logSection .loginContainer::after {
+.login-container .logSection .loginContainer::after {
   display: block;
   content: "";
   clear: both;
 }
-.container .logSection .loginContainer .loginSection {
+.login-container .logSection .loginContainer .loginSection {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
-.container .logSection .loginContainer .loginSection .loginInput {
+.login-container .logSection .loginContainer .loginSection .loginInput {
   width: 70%;
 }
-.container .logSection .loginContainer .loginSection .loginInput input {
+.login-container .logSection .loginContainer .loginSection .loginInput input {
   width: 100%;
   height: 35px;
   padding-left: 10px;
@@ -104,42 +103,63 @@ header h1 a img {
   border-radius: 5px;
   border: none;
 }
-.container .logSection .loginContainer .loginBtn {
+.login-container .logSection .loginContainer .loginSection .loginInput input::placeholder {
+  font-size: 15px;
+}
+.login-container .logSection .loginContainer .loginBtn {
   width: 28%;
   height: 76px;
-  background-color: #0d2645;
+  background-color: #000080;
   color: #fff;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.container .logSection .loginContainer .loginBtn:hover {
-  color: #ff7200;
   font-weight: bolder;
 }
-.container .logSection .loginContainer .search {
+.login-container .logSection .loginContainer .loginBtn:hover {
+  background-color: #51555f;
+}
+.login-container .logSection .loginContainer .search {
   width: 100%;
   float: left;
 }
-.container .logSection .loginContainer .search span a {
-  color: #fff;
+.login-container .logSection .loginContainer .search span {
+  color: #51555f;
   font-size: 14px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-weight: normal;
 }
-.container .logSection .loginContainer .search span a:hover {
-  color: #ff7200;
+.login-container .logSection .loginContainer .search span:hover {
+  color: #000080;
 }
-.container .logSection .loginContainer .search span.searchId::after {
+.login-container .logSection .loginContainer .search span:hover img {
+  filter: invert(14%) sepia(94%) saturate(7491%) hue-rotate(213deg) brightness(59%) contrast(112%);
+}
+.login-container .logSection .loginContainer .search span input {
+  margin-right: 5px;
+  vertical-align: middle;
+  border: 1px solid #51555f;
+}
+.login-container .logSection .loginContainer .search span img {
+  filter: invert(35%) sepia(8%) saturate(651%) hue-rotate(185deg) brightness(87%) contrast(90%);
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.login-container .logSection .loginContainer .search span.searchId::after {
   content: "|";
   display: inline-block;
   padding-left: 15px;
   padding-right: 10px;
 }
-.container #frame {
+.login-container #frame {
   position: relative;
   height: 100%;
 }
-.container #frame .panel {
+.login-container #frame .panel {
   position: absolute;
   top: 0;
   left: 0;
@@ -147,16 +167,16 @@ header h1 a img {
   height: 100%;
   overflow: hidden;
 }
-.container #frame .panel li {
+.login-container #frame .panel li {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.container #frame .panel li.on img {
+.login-container #frame .panel li.on img {
   opacity: 1;
   transform: scale(1.01);
 }
-.container #frame .panel li img {
+.login-container #frame .panel li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -164,7 +184,7 @@ header h1 a img {
   transform: scale(1);
   transition: opacity 0.5s, transform 4s;
 }
-.container #frame .panel-mobile {
+.login-container #frame .panel-mobile {
   display: none;
   position: absolute;
   top: 0;
@@ -173,16 +193,16 @@ header h1 a img {
   height: 100%;
   overflow: hidden;
 }
-.container #frame .panel-mobile li {
+.login-container #frame .panel-mobile li {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.container #frame .panel-mobile li.on img {
+.login-container #frame .panel-mobile li.on img {
   opacity: 1;
   transform: scale(1.01);
 }
-.container #frame .panel-mobile li img {
+.login-container #frame .panel-mobile li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -210,42 +230,47 @@ footer p {
   }
 }
 @media screen and (max-width: 1700px) {
-  .container .logSection .loginHeader .pmsImage {
-    transform: scale(50%);
+  .login-container .logSection {
+    width: 30%;
+  }
+  .login-container .logSection .loginHeader {
+    width: 263px;
+  }
+  .login-container .logSection .loginHeader .pmsImage {
+    transform: scale(50%) translate(-50%, -50%);
   }
 }
 @media screen and (max-width: 1500px) {
-  .container .logSection {
+  header h1 {
+    width: 100%;
+    height: 80px;
+    padding: 15px 0 15px 15px;
+  }
+  .login-container .logSection {
     width: 35%;
   }
-  .container .logSection .loginHeader .pmsImage {
-    top: -15%;
-  }
-  .container .logSection .loginContainer {
+  .login-container .logSection .loginContainer {
     width: 65%;
   }
 }
 @media screen and (max-width: 1200px) {
-  .container .logSection {
+  .login-container .logSection {
     width: 40%;
-    left: 50%;
-    transform: translateX(-50%);
   }
-  .container #frame .panel {
+  .login-container #frame .panel {
     display: none;
   }
-  .container #frame .panel-mobile {
+  .login-container #frame .panel-mobile {
     display: block;
   }
 }
 @media screen and (max-width: 900px) {
-  .container .logSection {
+  .login-container .logSection {
     width: 65%;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  .container .logSection .loginHeader .pmsImage {
-    top: 0;
-  }
-  .container .logSection .loginContainer {
+  .login-container .logSection .loginContainer {
     width: 90%;
   }
   footer p {
@@ -253,14 +278,10 @@ footer p {
   }
 }
 @media screen and (max-width: 550px) {
-  .container .logSection {
+  .login-container .logSection {
     width: 90%;
-    background-color: rgba(238, 238, 238, 0.3);
   }
-  .container .logSection .loginHeader .pmsImage {
-    top: -30%;
-  }
-  .container .logSection .loginContainer {
+  .login-container .logSection .loginContainer {
     width: 95%;
   }
   footer p {
