@@ -1,16 +1,22 @@
 @charset "utf-8";
 @font-face {
 	font-family: "neo";
-	src: url("../font/AppleSDGothicNeoM.ttf")
-		format("truetype");
+	src: url("./font/AppleSDGothicNeoM.ttf")
+			format("truetype"),
+		url("font/AppleSDGothicNeoB.ttf") format("truetype"),
+		url("font/AppleSDGothicNeoEB.ttf") format("truetype"),
+		url("font/AppleSDGothicNeoH.ttf") format("truetype"),
+		url("font/AppleSDGothicNeoL.ttf") format("truetype");
 }
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 $logo-color: #000080;
 
 * {
 	margin: 0;
 	padding: 0;
 	font-family: "neo";
+	font-weight: normal;
 	box-sizing: border-box;
 }
 a {
@@ -43,10 +49,10 @@ header {
 	margin: 0 auto;
 	.logSection {
 		position: absolute;
-		top: 10%;
+		top: 8%;
 		left: 5%;
 		width: 25%;
-		height: 80%;
+		height: 84%;
 		border-radius: 40px;
 		background-color: rgb(238, 238, 238, 0.7);
 		display: flex;
@@ -79,7 +85,7 @@ header {
 		}
 		.loginContainer {
 			position: relative;
-			width: 55%;
+			width: 62%;
 			margin: 30px auto 50px;
 			&::after {
 				display: block;
@@ -108,7 +114,7 @@ header {
 			.loginBtn {
 				width: 28%;
 				height: 76px;
-				background-color: $logo-color;
+				background-color: #05065c;
 				color: #fff;
 				border-radius: 10px;
 				display: flex;
@@ -122,10 +128,36 @@ header {
 			.search {
 				width: 100%;
 				float: left;
+				label {
+					span {
+						color: #3c4646;
+						font-size: 14px;
+						letter-spacing: 1px;
+						cursor: pointer;
+						font-weight: normal;
+						&:hover {
+							color: $logo-color;
+							&.searchId::after {
+								color: #3c4646;
+							}
+						}
+						input {
+							margin-right: 5px;
+							border: 1px solid #3c4646;
+							vertical-align: middle;
+						}
+					}
+					span.searchId::after {
+						content: "|";
+						display: inline-block;
+						padding-left: 15px;
+						padding-right: 10px;
+					}
+				}
 				span {
-					color: #51555f;
+					color: #3c4646;
 					font-size: 14px;
-					letter-spacing: 1.5px;
+					letter-spacing: 1px;
 					cursor: pointer;
 					font-weight: normal;
 					&:hover {
@@ -135,12 +167,11 @@ header {
 								hue-rotate(213deg) brightness(59%)
 								contrast(112%);
 						}
+						&.searchId::after {
+							color: #3c4646;
+						}
 					}
-					input {
-						margin-right: 5px;
-						vertical-align: middle;
-						border: 1px solid #51555f;
-					}
+
 					img {
 						filter: invert(35%) sepia(8%) saturate(651%)
 							hue-rotate(185deg) brightness(87%)
@@ -150,12 +181,6 @@ header {
 						vertical-align: middle;
 						margin-right: 5px;
 					}
-				}
-				span.searchId::after {
-					content: "|";
-					display: inline-block;
-					padding-left: 15px;
-					padding-right: 10px;
 				}
 			}
 		}
